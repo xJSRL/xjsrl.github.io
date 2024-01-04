@@ -12,24 +12,26 @@
   </mat-sidenav>
   <mat-sidenav-content class="fade-in">
     <mat-toolbar>
-      <mat-toolbar-row>
+      <mat-toolbar-row class="p-custom" *ngIf="(isHandset$ | async) === false">
         <div class="img-icon"></div>
         <span class="example-spacer"></span>
-        <div class="action-container" *ngIf="(isHandset$ | async) === false">
+        <div class="action-container" >
           <button class="btn-custom me-3">About</button>
           <button class="btn-custom me-3">Projects</button>
           <button class="btn-custom me-3">Contact</button>
+          <button (click)="toogleDarkTheme()"><span
+              class="material-symbols-outlined d-flex align-items-center">
+              contrast
+            </span></button>
         </div>
-        <button (click)="toogleDarkTheme()" class="me-3"><span
-            class="material-symbols-outlined d-flex align-items-center">
-            contrast
-          </span></button>
-        <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
-          *ngIf="(isHandset$ | async) === true">
-          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-        </button>
       </mat-toolbar-row>
 
+        <div class="img-icon"  *ngIf="(isHandset$ | async) === true"></div>
+        <span class="example-spacer" *ngIf="(isHandset$ | async) === true" ></span>
+  
+        <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="(isHandset$ | async) === true"><mat-icon >menu</mat-icon>
+        </button>
+      
     </mat-toolbar>
     <!-- Add Content Here -->
     <app-background-animation

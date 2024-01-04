@@ -1,0 +1,38 @@
+.container{
+  width: 50%;
+}
+
+@media screen and (max-width: 956px) {
+  .container {
+    width: 100%;
+  }
+}
+
+h1{
+  font-size: 38px;
+  letter-spacing: 5px;
+  line-height: 1em;
+}
+
+@keyframes zoomInOut {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+}
+
+@keyframes moveRight {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+}
+
+.animated-arrow {
+  display: inline-block;
+  animation: zoomInOut 2s ease-in-out infinite, moveRight 2s ease-in-out infinite;
+}

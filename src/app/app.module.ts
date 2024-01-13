@@ -10,6 +10,7 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { BackgroundAnimationComponent } from './components/background-animation/background-animation.component';
 import { HomeComponent } from './pages/home/home.component';
 import { MediaLinksComponent } from './components/media-links/media-links.component';
+import { AboutComponent } from './pages/about/about.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { MediaLinksComponent } from './components/media-links/media-links.compon
     BackgroundAnimationComponent,
     HomeComponent,
     MediaLinksComponent,
+    AboutComponent,
   ],
   imports: [
     CommonModule,

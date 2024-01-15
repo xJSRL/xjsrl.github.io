@@ -1,0 +1,32 @@
+<div class="title">
+  <h1 class="fw-bold">My Projects.</h1>
+</div>
+
+<div class="content">
+  <div class="">
+    
+    <div class="project-container" >
+      <div class="grid-item border rounded" *ngFor="let item of projects" >
+        <figure class="figure-container" >
+          
+            <img [src]="item.preview" />
+    
+          <figcaption>
+            <h3>{{item.projectName}}</h3>
+            <p>{{item.shortDescription}}</p>
+            <label *ngFor="let tech of item.techUsed">
+              <span class="btn-pill d-block mb-1" >{{tech}}</span>
+            </label>
+          </figcaption>
+          <a href="#"></a>
+        </figure>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="link mt-4 fit-width" routerLink="/contact">
+  <label class="me-3">Contact Me<i
+      class="fa-solid fa-arrow-right fa-beat-fade fa-lg animated-arrow"></i></label>
+</div>

@@ -1,5 +1,5 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { AfterViewChecked, Component, ViewChild, inject } from '@angular/core';
+import { AfterViewChecked, Component, HostListener, ViewChild, inject } from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
 import { Observable, map, shareReplay } from 'rxjs';
 
@@ -30,5 +30,15 @@ export class AppComponent implements AfterViewChecked {
     if (contentElement) {
       contentElement.classList.add('fade-in');
     }
+  }
+
+  backgroundHeight = '100vh';
+
+  @HostListener('window:scroll', ['$event'])
+  onScroll(): void {
+    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrolled = window.scrollY;
+    const newHeight = 100 + (scrolled / scrollHeight) * 100;
+    this.backgroundHeight = `${newHeight}vh`;
   }
 }

@@ -15,35 +15,37 @@
       <mat-toolbar-row class="p-custom" *ngIf="(isHandset$ | async) === false">
         <div class="img-icon link" routerLink="/"></div>
         <span class="example-spacer"></span>
-        <div class="action-container" >
+        <div class="action-container">
           <button class="btn-custom me-3" routerLink="/about">About</button>
           <button class="btn-custom me-3" routerLink="/projects">Projects</button>
           <button class="btn-custom me-3" routerLink="/contact">Contact</button>
-          <button (click)="toogleDarkTheme()"><span
-              class="material-symbols-outlined d-flex align-items-center">
+          <button (click)="toogleDarkTheme()"><span class="material-symbols-outlined d-flex align-items-center">
               contrast
             </span></button>
         </div>
       </mat-toolbar-row>
 
-        <div class="img-icon link" *ngIf="(isHandset$ | async) === true" routerLink="/"></div>
-        <span class="example-spacer" *ngIf="(isHandset$ | async) === true" ></span>
-  
-        <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="(isHandset$ | async) === true"><mat-icon >menu</mat-icon>
-        </button>
-      
+      <div class="img-icon link" *ngIf="(isHandset$ | async) === true" routerLink="/"></div>
+      <span class="example-spacer" *ngIf="(isHandset$ | async) === true"></span>
+
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        *ngIf="(isHandset$ | async) === true"><mat-icon>menu</mat-icon>
+      </button>
+
     </mat-toolbar>
     <!-- Add Content Here -->
-    <app-background-animation
-      style="position: absolute; top: 0; width: 100vw; height: 100vh; z-index: -1;"></app-background-animation>
-      <div class="container d-flex justify-content-center align-items-center">
-        <div class="container-fluid">
-          <router-outlet></router-outlet>
+    <app-background-animation [style.height]="backgroundHeight"
+      style="position: fixed; top: 0; width: 100vw; z-index: -1;">
+    </app-background-animation>
 
-          <footer class="mt-5">
-            <app-media-links></app-media-links>
-          </footer>
-        </div>
+    <div class="container d-flex justify-content-center align-items-center">
+      <div class="container-fluid">
+        <router-outlet></router-outlet>
+
+        <footer class="mt-5 mb-5">
+          <app-media-links></app-media-links>
+        </footer>
       </div>
+    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

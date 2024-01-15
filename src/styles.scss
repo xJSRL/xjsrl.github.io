@@ -1,5 +1,6 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
+
 @use '@angular/material' as mat;
 @include mat.core();
 @import url('https://fonts.googleapis.com/css2?family=Days+One&family=Lato&family=Poppins&display=swap');
@@ -13,14 +14,12 @@ $textColor_dark: white;
 $borderColor_light: black;
 $borderColor_dark: white;
 
-// mixin that enables css variables in light mode
 @mixin lighten() {
   --bgColor: #{$bgColor_light};
   --textColor: #{$textColor_light};
   --borderColor: #{$borderColor_light};
 }
 
-// mixin that enables css variables in dark mode
 @mixin darken() {
   --bgColor: #{$bgColor_dark};
   --textColor: #{$textColor_dark};
@@ -172,12 +171,6 @@ body {
     height: 64px;
     border : var(--border-color);
     background-color: unset;
-  // -webkit-backdrop-filter: blur(2px) saturate(180%);
-  // background-color: #ffffff05;
-  // border: 1px solid var(--color-lgt-2);
-  // border-radius: .5rem;
-  // padding: 2rem;
-  // box-shadow: 0 10px 50px #00000005;
   }
   
   .card-text {
@@ -206,7 +199,17 @@ body {
     width: 2rem;
   }
   
-  
+  .btn-pill{
+    background: rgb(105, 104, 105);
+    padding: 4px 10px;
+    border-radius: 50px;
+    text-transform: capitalize;
+    font-size: 11px;
+    margin-right: 6px;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+
+  }
 
   .container{
     width: 50%;
@@ -241,9 +244,96 @@ body {
       transform: translateX(20px);
     }
   }
+
+  @keyframes slideAnimation {
+    50% {
+      transform: translateY(-50%);
+    }
+  }
   
   .animated-arrow {
     display: inline-block;
     animation: zoomInOut 2s ease-in-out infinite, moveRight 2s ease-in-out infinite;
   }
+
+  .column-container{
+    max-width: 720px;
+    margin: 24px auto 48px auto;
+    // column-count: 2;
+
+  }
+
+  .figure-container * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.35s ease;
+    transition: all 0.35s ease;
+  }
+
+  .figure-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    padding: 10px;
+    min-width: 230px;
+    width: 100%;
+    color: #141414;
+    text-align: left;
+
+    img {
+      // max-width: 100%;
+      // max-height: 80%;
+      // max-width: 100%;
+      object-fit: cover;
+      vertical-align: top;
+      // animation: slideAnimation 20s linear infinite alternate;
+    }
+
+    figcaption {
+      position: absolute;
+      top: calc(200%);
+      width: 100%;
+      background-color: var(--bkg-color);
+      opacity: 0.95;
+      padding: 15px 25px 65px;
+    
+      :before {
+        position: absolute;
+        content: '';
+        z-index: 2;
+        bottom: 100%;
+        left: 0;
+        width: 100%;
+        height: 30%;
+        background-image: -webkit-linear-gradient(top, transparent 0%, var(--bkg-color) 100%);
+        background-image: linear-gradient(to bottom, transparent 0%, var(--bkg-color) 100%);
+        opacity: 0.5;
+        transition: opacity 0.3s ease;
+      }
+    }
+    h3 {
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    p {
+      opacity: 0.9;
+      line-height:normal;
+    }
+    a {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 2;
+    }
+  }
+
+  .figure-container:hover figcaption {
+    top: calc(100% - 170px);
+  }
+
 }
+
+@import 'bootstrap/scss/bootstrap';

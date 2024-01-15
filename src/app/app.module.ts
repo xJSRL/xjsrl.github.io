@@ -11,7 +11,8 @@ import { BackgroundAnimationComponent } from './components/background-animation/
 import { HomeComponent } from './pages/home/home.component';
 import { MediaLinksComponent } from './components/media-links/media-links.component';
 import { AboutComponent } from './pages/about/about.component';
-
+import { ProjectsComponent } from './pages/projects/projects.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,15 +22,16 @@ import { AboutComponent } from './pages/about/about.component';
     HomeComponent,
     MediaLinksComponent,
     AboutComponent,
+    ProjectsComponent,
   ],
   imports: [
     CommonModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    FlexLayoutModule,
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

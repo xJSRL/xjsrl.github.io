@@ -1,6 +1,6 @@
 <mat-sidenav-container class="sidenav-container" autosize>
   <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-    mode="over">
+    mode="over" position="end">
     <mat-toolbar>Menu</mat-toolbar>
 
     <app-sidenav></app-sidenav>
@@ -48,4 +48,10 @@
       </div>
     </div>
   </mat-sidenav-content>
+
+  <mat-sidenav #projectDrawer class="sidenav" style="background: transparent" fixedInViewport mode="over" >
+
+    <app-project-details></app-project-details>
+
+  </mat-sidenav>
 </mat-sidenav-container>

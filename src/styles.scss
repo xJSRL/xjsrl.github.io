@@ -4,27 +4,9 @@
 @use '@angular/material' as mat;
 @include mat.core();
 @import url('https://fonts.googleapis.com/css2?family=Days+One&family=Lato&family=Poppins&display=swap');
-
-$bgColor_light: white;
-$bgColor_dark: black;
-
-$textColor_light: black;
-$textColor_dark: white;
-
-$borderColor_light: black;
-$borderColor_dark: white;
-
-@mixin lighten() {
-  --bgColor: #{$bgColor_light};
-  --textColor: #{$textColor_light};
-  --borderColor: #{$borderColor_light};
-}
-
-@mixin darken() {
-  --bgColor: #{$bgColor_dark};
-  --textColor: #{$textColor_dark};
-  --borderColor: #{$borderColor_dark};
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
 
 // light theme
 body {
@@ -34,12 +16,15 @@ body {
   --btn-bg-color: white;
   --bg-anim-color: #cecbcb;
   --bg-anim-bg-color: #f7f7f7;
-  --bg-anim-gradient: linear-gradient(-45deg, #f7f7f7, #f2f2f2, #ededed, #e8e8e8);
+  --bg-anim-gradient: linear-gradient(-45deg, #f7f7f7, #e7e7e7, #ededed, #dbdbdb);
   --logo-link: url('/assets/icons/logo-dark.png');
   --border-color: 1px solid rgb(83, 83, 83);
+  --sidebar-color: #fffdfc;
   --font-sm: 14px;
   --font-md: 16px;
+  --font-x-md: 18px;
 }
+
 // dark theme
 body.dark-theme {
   --text-color: #eee;
@@ -49,22 +34,27 @@ body.dark-theme {
   --bg-anim-color: #cec7c7;
   --bg-anim-bg-color: #606060;
   --bg-anim-gradient: linear-gradient(-45deg, #444444, #484848, #4c4c4c, #505050);
+  --sidebar-color: #393939;
   --logo-link: url('/assets/icons/logo-white.png');
   --border-color: 1px solid rgb(238, 238, 238);
 }
 
+#projectDrawer {
+  background-color: transparent !important;
+}
 
-button{
+button {
   padding: 10px;
   border: none;
   border-radius: 2px;
   color: var(--btn-txt-color);
-  background-color: unset ;
+  background-color: unset;
   // background-color: var(--btn-bg-color);
 }
 
-button:hover, button:active{
-  
+button:hover,
+button:active {
+
   border-bottom: solid 1px var(--btn-txt-color);
   border-radius: 2px;
   color: var(--btn-txt-color);
@@ -81,126 +71,71 @@ body {
   font-family: 'Poppins', sans-serif !important;
 }
 
-:root{
-  .border-bottom{
+:root {
+  .border-bottom {
     border-bottom: var(--bs-border-width) var(--bs-border-style) var(--text-color) !important;
   }
-  .fit-width{
+
+  .fit-width {
     width: fit-content;
   }
-  h1, h2, h3, h4, h5, h6, p, label, button, a{
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  label,
+  button,
+  a {
     font-family: 'Poppins', sans-serif;
     color: var(--text-color);
   }
-  
-  .img-icon{
+
+  .img-icon {
     width: 60px;
     height: 60px;
     background-image: var(--logo-link);
     background-size: cover !important;
   }
-  a{
+
+  a {
     text-decoration: none;
   }
-  p, label, a{
-    
+
+  p,
+  label,
+  a {
+
     font-size: calc(var(--font-sm) + 0.9px);
   }
+
   h4 {
     font-size: calc(var(--font-md) + 1.5px);
   }
-  p{
+
+  p {
     line-height: 2.3;
     font-weight: 400;
     color: var(--text-color) !important;
   }
 
-  .timeline {
-    list-style: none;
-    padding: 0;
-    p{
-      line-height: 1;
-    }
-    li {
-      position: relative;
-      margin-top: 10px;
-      padding-left: 20px;
-    }
-    li::before {
-      content: '';
-      position: absolute;
-      top: 10%;
-      left: 0;
-      transform: translateY(-50%);
-      width: 10px;
-      height: 10px;
-      border: 2px solid var(--text-color);
-      border-radius: 50%;
-      background-color: transparent;
-    }
-    li .content {
-      margin-left: 20px;
-    }
-  }
-
-  .p-custom{
+  .p-custom {
     padding: 5% 20% 4% 20%;
   }
 
-  .link:hover{
+  .link:hover {
     border-bottom: solid 1px var(--btn-txt-color);
     cursor: pointer;
   }
 
-  .link:hover label{
+  .link:hover label {
     cursor: pointer;
   }
 
-  .card-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 180px));
-    grid-gap: 1rem;
-    align-items: center;
-  // justify-content: center;
-  }
-  
-  .card {
-    display: flex;
-    overflow: hidden;
-    padding: 0;
-    backdrop-filter: blur(2px) saturate(180%);
-    height: 64px;
-    border : var(--border-color);
-    background: transparent;
-  }
-  
-  .card-text {
-    display: flex;
-    align-items: center;
-    font-size: 1rem;
-
-    p {
-      color: var(--text-color);
-      font-size: 1.125rem;
-      line-height: 1.5;
-      margin: 0;
-    }
-  }
-  
-  .card-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 4rem;
-    width: 4rem;
-  }
-  
-  .card-icon img {
-    height: 2rem;
-    width: 2rem;
-  }
-  
-  .btn-pill{
+  .btn-pill {
     background: rgb(105, 104, 105);
     padding: 4px 10px;
     border-radius: 50px;
@@ -212,45 +147,52 @@ body {
 
   }
 
-  .container{
+  .container {
     width: 50%;
   }
-  
+
   @media screen and (max-width: 956px) {
     .container {
       width: 100%;
     }
   }
 
-  .btn-submit{
+  .btn-submit {
     color: var(--btn-bg-color);
     background-color: var(--btn-txt-color);
     border-radius: 5px;
     padding: 10px 30px 10px 30px;
-    &:hover{
+
+    &:hover {
       border-bottom: unset !important;
     }
   }
-  
-  h1{
+
+  h1 {
     font-size: 38px;
     letter-spacing: 5px;
     line-height: 1em;
   }
-  
+
   @keyframes zoomInOut {
-    0%, 100% {
+
+    0%,
+    100% {
       transform: scale(1);
     }
+
     50% {
       transform: scale(1.5);
     }
   }
-  
+
   @keyframes moveRight {
-    0%, 100% {
+
+    0%,
+    100% {
       transform: translateX(0);
     }
+
     50% {
       transform: translateX(20px);
     }
@@ -261,103 +203,70 @@ body {
       transform: translateY(-50%);
     }
   }
-  
+
+  @keyframes fadeLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
   .animated-arrow {
     display: inline-block;
     animation: zoomInOut 2s ease-in-out infinite, moveRight 2s ease-in-out infinite;
   }
 
-  .column-container{
-    max-width: 720px;
-    margin: 24px auto 48px auto;
-    // column-count: 2;
-
-  }
-
-  .figure-container * {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    -webkit-transition: all 0.35s ease;
-    transition: all 0.35s ease;
-  }
-
-  .figure-container {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    overflow: hidden;
-    padding: 10px;
-    min-width: 230px;
-    width: 100%;
-    color: #141414;
-    text-align: left;
-
-    img {
-      // max-width: 100%;
-      // max-height: 80%;
-      // max-width: 100%;
-      object-fit: cover;
-      vertical-align: top;
-      // animation: slideAnimation 20s linear infinite alternate;
-    }
-
-    figcaption {
-      position: absolute;
-      top: calc(200%);
-      width: 100%;
-      background-color: var(--bkg-color);
-      opacity: 0.95;
-      padding: 15px 25px 65px;
-    
-      :before {
-        position: absolute;
-        content: '';
-        z-index: 2;
-        bottom: 100%;
-        left: 0;
-        width: 100%;
-        height: 30%;
-        background-image: -webkit-linear-gradient(top, transparent 0%, var(--bkg-color) 100%);
-        background-image: linear-gradient(to bottom, transparent 0%, var(--bkg-color) 100%);
-        opacity: 0.5;
-        transition: opacity 0.3s ease;
-      }
-    }
-    h3 {
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-    p {
-      opacity: 0.9;
-      line-height:normal;
-    }
-    a {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      z-index: 2;
-    }
-  }
-
-  .figure-container:hover figcaption {
-    top: calc(100% - 170px);
-  }
-
-
-  .form-group{
-    .form-control{
+  .form-group {
+    .form-control {
       background-color: unset;
       line-height: 2;
       color: var(--text-color);
-      &::placeholder{
+
+      &::placeholder {
         color: var(--text-color);
       }
     }
-    .form-control:active, .form-control:focus{
+
+    .form-control:active,
+    .form-control:focus {
       background-color: var(--bkg-color);
     }
+  }
+
+  .p-galleria-item-container {
+    button {
+      background-color: #261e4277;
+      color: #fff;
+
+      &:hover {
+        border-bottom: unset;
+      }
+    }
+
+    button:after {
+      content: "";
+      background-color: inherit;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      mix-blend-mode: difference;
+    }
+
+    button:before {
+      content: "";
+      display: none;
+      filter: grayscale(100%) contrast(0) brightness(0);
+      clip-path: polygon(0 0);
+    }
+
   }
 }
 

@@ -14,6 +14,9 @@ import { AboutComponent } from './pages/about/about.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ContactComponent } from './pages/contact/contact.component';
+import { ProjectDetailsComponent } from './components/project-details/project-details.component';
+import { CarouselModule } from 'primeng/carousel';
+import { GalleriaModule } from 'primeng/galleria';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +28,7 @@ import { ContactComponent } from './pages/contact/contact.component';
     AboutComponent,
     ProjectsComponent,
     ContactComponent,
+    ProjectDetailsComponent,
   ],
   imports: [
     CommonModule,
@@ -33,6 +37,8 @@ import { ContactComponent } from './pages/contact/contact.component';
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule,
+    CarouselModule,
+    GalleriaModule,
   ],
   bootstrap: [AppComponent]
 })

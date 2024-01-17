@@ -26,4 +26,8 @@ export class ProjectsComponent implements OnInit {
     });
   }
 
+  showProjectDetails(id: number): void {
+    this._ptService.setSelectedProject(id);
+  }
+
 }

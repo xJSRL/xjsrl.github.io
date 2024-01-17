@@ -6,7 +6,7 @@
   <div class="">
     
     <div class="project-container" >
-      <div class="grid-item border rounded" *ngFor="let item of projects" >
+      <div class="grid-item border rounded" *ngFor="let item of projects" (click)="showProjectDetails(item.id)">
         <figure class="figure-container" >
           
             <img [src]="item.preview" />
@@ -18,7 +18,7 @@
               <span class="btn-pill d-block mb-1" >{{tech}}</span>
             </label>
           </figcaption>
-          <a href="#"></a>
+          <!-- <a href="#"></a> -->
         </figure>
       </div>
     </div>

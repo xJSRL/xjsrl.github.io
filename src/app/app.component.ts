@@ -2,6 +2,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { AfterViewChecked, Component, HostListener, ViewChild, inject } from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
 import { Observable, map, shareReplay } from 'rxjs';
+import { ProjectTimelineService } from './services/project-timeline.service';
 
 @Component({
   selector: 'app-root',
@@ -9,12 +10,21 @@ import { Observable, map, shareReplay } from 'rxjs';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements AfterViewChecked {
+  @ViewChild('drawer') drawer!: MatDrawer; 
+  @ViewChild('projectDrawer') projectDrawer!: MatDrawer; 
+  private breakpointObserver = inject(BreakpointObserver);
+  
   ngAfterViewChecked(): void {
     this.addFadeInAnimation();
   }
 
-  @ViewChild('drawer') drawer!: MatDrawer; 
-  private breakpointObserver = inject(BreakpointObserver);
+  constructor(private _ptService: ProjectTimelineService){
+    this._ptService.selectedProject$.subscribe((id) => {
+      if (id !== null) {
+        this.projectDrawer.open();
+      }
+    });
+  }
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(

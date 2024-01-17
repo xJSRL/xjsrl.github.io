@@ -5,7 +5,7 @@ body {
 }
 
 .lines {
-  background-color: var(--bg-anim-bg-color);
+  // background-color: var(--bg-anim-bg-color);
   height: 100vh;
   overflow: hidden;
 }
@@ -27,13 +27,17 @@ body {
 }
 
 .overlay {
-  background-image: radial-gradient(#fff, #f9f4ea);
+  // background-image: radial-gradient(#fff, #f9f4ea);
   height: 100vh;
   opacity: 0.7;
   position: absolute;
   top: 0;
   width: 100vw;
-  z-index: 1;
+  // z-index: 1;
+  background: var(--bg-anim-gradient);
+  background-size: 400% 400%;
+  animation: gradient 40s ease infinite;
+  height: 100vh;
 }
 
 @keyframes animation {
@@ -61,7 +65,6 @@ body {
   align-items: center;
   justify-content: center;
   // background:#ffd6a5;
-  opacity: 5%;
   position: fixed;
   bottom: 0;
   height: 20em;
@@ -70,4 +73,28 @@ body {
   font-family: 'Abril Fatface', serif;
   font-size: 20em;
   line-height: 0;
+  color: rgba(170, 170, 170, 0.18);
+}
+
+
+.bg-anim {
+  background: var(--bg-anim-gradient);
+  background-size: 400% 400%;
+  animation: gradient 40s ease infinite;
+  height: 100vh;
+}
+
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }

@@ -13,6 +13,7 @@ import { MediaLinksComponent } from './components/media-links/media-links.compon
 import { AboutComponent } from './pages/about/about.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ContactComponent } from './pages/contact/contact.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +24,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MediaLinksComponent,
     AboutComponent,
     ProjectsComponent,
+    ContactComponent,
   ],
   imports: [
     CommonModule,

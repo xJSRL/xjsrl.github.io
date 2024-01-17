@@ -32,9 +32,9 @@ body {
   --bkg-color: #fff;
   --btn-txt-color: #222;
   --btn-bg-color: white;
-  --bg-anim-color: #eeeeee;
+  --bg-anim-color: #cecbcb;
   --bg-anim-bg-color: #f7f7f7;
-
+  --bg-anim-gradient: linear-gradient(-45deg, #f7f7f7, #f2f2f2, #ededed, #e8e8e8);
   --logo-link: url('/assets/icons/logo-dark.png');
   --border-color: 1px solid rgb(83, 83, 83);
   --font-sm: 14px;
@@ -46,8 +46,9 @@ body.dark-theme {
   --bkg-color: #252222;
   --btn-txt-color: white;
   --btn-bg-color: rgb(46, 43, 43);
-  --bg-anim-color: #505050;
+  --bg-anim-color: #cec7c7;
   --bg-anim-bg-color: #606060;
+  --bg-anim-gradient: linear-gradient(-45deg, #444444, #484848, #4c4c4c, #505050);
   --logo-link: url('/assets/icons/logo-white.png');
   --border-color: 1px solid rgb(238, 238, 238);
 }
@@ -170,7 +171,7 @@ body {
     backdrop-filter: blur(2px) saturate(180%);
     height: 64px;
     border : var(--border-color);
-    background-color: unset;
+    background: transparent;
   }
   
   .card-text {
@@ -218,6 +219,16 @@ body {
   @media screen and (max-width: 956px) {
     .container {
       width: 100%;
+    }
+  }
+
+  .btn-submit{
+    color: var(--btn-bg-color);
+    background-color: var(--btn-txt-color);
+    border-radius: 5px;
+    padding: 10px 30px 10px 30px;
+    &:hover{
+      border-bottom: unset !important;
     }
   }
   
@@ -334,6 +345,20 @@ body {
     top: calc(100% - 170px);
   }
 
+
+  .form-group{
+    .form-control{
+      background-color: unset;
+      line-height: 2;
+      color: var(--text-color);
+      &::placeholder{
+        color: var(--text-color);
+      }
+    }
+    .form-control:active, .form-control:focus{
+      background-color: var(--bkg-color);
+    }
+  }
 }
 
 @import 'bootstrap/scss/bootstrap';

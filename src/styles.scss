@@ -1,1 +1,349 @@
-/* You can add global styles to this file, and also import other style files */
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+
+@use '@angular/material' as mat;
+@include mat.core();
+@import url('https://fonts.googleapis.com/css2?family=Days+One&family=Lato&family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
+// light theme
+body {
+  --text-color: #222;
+  --bkg-color: #fff;
+  --btn-txt-color: #222;
+  --btn-bg-color: white;
+  --bg-anim-color: #cecbcb;
+  --bg-anim-bg-color: #f7f7f7;
+  --bg-anim-gradient: linear-gradient(-45deg, #f7f7f7, #e7e7e7, #ededed, #dbdbdb);
+  --logo-link: url('/assets/icons/logo-dark.png');
+  --border-color: 1px solid rgb(83, 83, 83);
+  --sidebar-color: #fffdfc;
+  --font-sm: 14px;
+  --font-md: 16px;
+  --font-x-md: 18px;
+}
+
+// dark theme
+body.dark-theme {
+  --text-color: #eee;
+  --bkg-color: #252222;
+  --btn-txt-color: white;
+  --btn-bg-color: rgb(46, 43, 43);
+  --bg-anim-color: #cec7c7;
+  --bg-anim-bg-color: #606060;
+  --bg-anim-gradient: linear-gradient(-45deg, #444444, #484848, #4c4c4c, #505050);
+  --sidebar-color: #2b2b2b;
+  ;
+  --logo-link: url('/assets/icons/logo-white.png');
+  --border-color: 1px solid rgb(238, 238, 238);
+}
+
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 2px;
+  color: var(--btn-txt-color);
+  background-color: unset;
+  // background-color: var(--btn-bg-color);
+}
+
+button:hover,
+button:active {
+
+  border-bottom: solid 1px var(--btn-txt-color);
+  border-radius: 2px;
+  color: var(--btn-txt-color);
+  // background-color: var(--btn-bg-color);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+:root {
+  .border-bottom {
+    border-bottom: var(--bs-border-width) var(--bs-border-style) var(--text-color) !important;
+  }
+
+  .fit-width {
+    width: fit-content;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  label,
+  button,
+  a {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+  }
+
+  .img-icon {
+    width: 60px;
+    height: 60px;
+    background-image: var(--logo-link);
+    background-size: cover !important;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  p,
+  label,
+  a {
+
+    font-size: calc(var(--font-sm) + 0.9px);
+  }
+
+  h4 {
+    font-size: calc(var(--font-md) + 1.5px);
+  }
+
+  p {
+    line-height: 2.3;
+    font-weight: 400;
+    color: var(--text-color) !important;
+  }
+
+  .p-custom {
+    padding: 2em 1em 3em 0em;
+  }
+
+  .link:hover {
+    border-bottom: solid 1px var(--btn-txt-color);
+    cursor: pointer;
+  }
+
+  .link:hover label {
+    cursor: pointer;
+  }
+
+  .btn-pill {
+    background: rgb(105, 104, 105);
+    padding: 4px 10px;
+    border-radius: 50px;
+    text-transform: capitalize;
+    font-size: 11px;
+    margin-right: 6px;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+
+  }
+
+  .container {
+    width: 50%;
+  }
+
+  @media screen and (max-width: 956px) {
+    .container {
+      width: 100%;
+    }
+  }
+
+  .btn-submit {
+    color: var(--btn-bg-color);
+    background-color: var(--btn-txt-color);
+    border-radius: 5px;
+    padding: 10px 30px 10px 30px;
+
+    &:hover {
+      border-bottom: unset !important;
+    }
+  }
+
+  h1 {
+    font-size: 38px;
+    letter-spacing: 5px;
+    line-height: 1em;
+  }
+
+  @keyframes zoomInOut {
+
+    0%,
+    100% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.5);
+    }
+  }
+
+  @keyframes moveRight {
+
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+
+    50% {
+      transform: translateX(20px);
+    }
+  }
+
+  @keyframes slideAnimation {
+    50% {
+      transform: translateY(-50%);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-40px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+
+  @keyframes fadeLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes showup {
+    0% {
+      opacity: 0;
+    }
+
+    20% {
+      opacity: 1;
+    }
+
+    80% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes slidein {
+    0% {
+      margin-left: -800px;
+    }
+
+    20% {
+      margin-left: -800px;
+    }
+
+    35% {
+      margin-left: 0px;
+    }
+
+    100% {
+      margin-left: 0px;
+    }
+  }
+
+  @keyframes reveal {
+    0% {
+      opacity: 0;
+      width: 0px;
+    }
+
+    20% {
+      opacity: 1;
+      width: 0px;
+    }
+
+    30% {
+      width: 355px;
+    }
+
+    80% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+      width: 355px;
+    }
+  }
+
+
+  .animated-arrow {
+    display: inline-block;
+    animation: zoomInOut 2s ease-in-out infinite, moveRight 2s ease-in-out infinite;
+  }
+
+  .form-group {
+    .form-control {
+      background-color: unset;
+      line-height: 2;
+      color: var(--text-color);
+
+      &::placeholder {
+        color: var(--text-color);
+      }
+    }
+
+    .form-control:active,
+    .form-control:focus {
+      background-color: var(--bkg-color);
+    }
+  }
+
+  .p-galleria-item-container {
+    button {
+      background-color: #261e4277;
+      color: #fff;
+
+      &:hover {
+        border-bottom: unset;
+      }
+    }
+
+    button:after {
+      content: "";
+      background-color: inherit;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      mix-blend-mode: difference;
+    }
+
+    button:before {
+      content: "";
+      display: none;
+      filter: grayscale(100%) contrast(0) brightness(0);
+      clip-path: polygon(0 0);
+    }
+
+  }
+
+  .mdc-list-item__primary-text {
+    color: var(--text-color) !important;
+  }
+}
+
+@import 'bootstrap/scss/bootstrap';

@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+body {
+  margin: 0;
+}
+
+.lines {
+  // background-color: var(--bg-anim-bg-color);
+  height: 100vh;
+  overflow: hidden;
+}
+
+.line {
+  height: 200px;
+  transform: skewX(-20deg);
+  width: 200px;
+}
+
+.one {
+  animation: animation 80s linear infinite alternate;
+  box-shadow: -441px -431px 5px var(--bg-anim-color), 411px -472px 5px var(--bg-anim-color), 441px 418px 3px var(--bg-anim-color), 227px 283px 1px var(--bg-anim-color), 1465px 723px 4px var(--bg-anim-color), 294px 908px 2px var(--bg-anim-color), 4px 199px 3px var(--bg-anim-color), 899px -302px 1px var(--bg-anim-color), -394px 712px 1px var(--bg-anim-color), 328px 781px 3px var(--bg-anim-color), 421px 969px 2px var(--bg-anim-color), 572px 54px 2px var(--bg-anim-color), -150px 645px 4px var(--bg-anim-color), 1952px -336px 3px var(--bg-anim-color), 332px -274px 4px var(--bg-anim-color), 979px -40px 1px var(--bg-anim-color), 138px -129px 2px var(--bg-anim-color), -149px -147px 5px var(--bg-anim-color), 67px -430px 1px var(--bg-anim-color), 96px -460px 2px var(--bg-anim-color), 1481px 582px 1px var(--bg-anim-color), 1352px 397px 1px var(--bg-anim-color), -401px 632px 4px var(--bg-anim-color), 1275px 429px 4px var(--bg-anim-color), 1756px -458px 1px var(--bg-anim-color), 1986px 996px 5px var(--bg-anim-color), 1664px 842px 5px var(--bg-anim-color), 137px -467px 5px var(--bg-anim-color), -294px 308px 3px var(--bg-anim-color), 602px -219px 3px var(--bg-anim-color), 1954px 796px 2px var(--bg-anim-color), 1944px 700px 1px var(--bg-anim-color), -341px 574px 3px var(--bg-anim-color), 256px 331px 1px var(--bg-anim-color), -146px 628px 4px var(--bg-anim-color), 1070px 491px 4px var(--bg-anim-color), 990px 789px 2px var(--bg-anim-color), 951px -464px 5px var(--bg-anim-color), -374px -87px 3px var(--bg-anim-color), 1802px 384px 3px var(--bg-anim-color), 474px 240px 4px var(--bg-anim-color), 896px 319px 4px var(--bg-anim-color), 621px -274px 1px var(--bg-anim-color), 202px -113px 4px var(--bg-anim-color), 834px 311px 2px var(--bg-anim-color), -144px -328px 2px var(--bg-anim-color), 334px 698px 1px var(--bg-anim-color), -7px -321px 2px var(--bg-anim-color), 1755px -319px 1px var(--bg-anim-color), 1324px 679px 4px var(--bg-anim-color), 1672px 577px 5px var(--bg-anim-color);
+}
+
+.two {
+  animation: animation 80s linear infinite alternate-reverse;
+  box-shadow: 558px 572px 1px var(--bg-anim-color), -373px 884px 2px var(--bg-anim-color), 505px 329px 3px var(--bg-anim-color), 358px 87px 2px var(--bg-anim-color), -352px -448px 3px var(--bg-anim-color), 1538px 125px 3px var(--bg-anim-color), 888px 536px 1px var(--bg-anim-color), 1531px -159px 1px var(--bg-anim-color), -209px -387px 3px var(--bg-anim-color), 678px 107px 3px var(--bg-anim-color), 143px 38px 3px var(--bg-anim-color), 1288px 305px 1px var(--bg-anim-color), 1808px 769px 3px var(--bg-anim-color), -21px 25px 1px var(--bg-anim-color), 417px 561px 1px var(--bg-anim-color), 222px 770px 4px var(--bg-anim-color), -496px 186px 1px var(--bg-anim-color), -264px -382px 2px var(--bg-anim-color), 631px -443px 2px var(--bg-anim-color), -34px 650px 4px var(--bg-anim-color), 400px 611px 2px var(--bg-anim-color), 720px -424px 4px var(--bg-anim-color), -35px -266px 5px var(--bg-anim-color), 217px 88px 1px var(--bg-anim-color), 632px -304px 3px var(--bg-anim-color), 1854px 85px 4px var(--bg-anim-color), 184px 40px 1px var(--bg-anim-color), 1896px 872px 3px var(--bg-anim-color), -450px 124px 1px var(--bg-anim-color), 1378px 746px 1px var(--bg-anim-color), 899px 500px 4px var(--bg-anim-color), 1110px 663px 4px var(--bg-anim-color), 1900px 58px 3px var(--bg-anim-color), -210px 724px 3px var(--bg-anim-color), -353px -281px 3px var(--bg-anim-color), -324px -404px 2px var(--bg-anim-color), -333px -407px 5px var(--bg-anim-color), 456px -388px 4px var(--bg-anim-color), 1327px -96px 4px var(--bg-anim-color), 460px 391px 1px var(--bg-anim-color), 1995px 42px 3px var(--bg-anim-color), 1446px -337px 5px var(--bg-anim-color), 1516px 311px 3px var(--bg-anim-color), 655px 693px 2px var(--bg-anim-color), 1966px -31px 4px var(--bg-anim-color), 522px 71px 4px var(--bg-anim-color), 1968px 630px 4px var(--bg-anim-color), -383px 753px 4px var(--bg-anim-color), 1754px 226px 3px var(--bg-anim-color), 491px 163px 2px var(--bg-anim-color), 1915px 250px 5px var(--bg-anim-color);
+}
+
+.overlay {
+  // background-image: radial-gradient(#fff, #f9f4ea);
+  height: 100vh;
+  opacity: 0.7;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  // z-index: 1;
+  background: var(--bg-anim-gradient);
+  background-size: 400% 400%;
+  animation: gradient 40s ease infinite;
+  height: 100vh;
+}
+
+@keyframes animation {
+  0% {
+    opacity: 0.7;
+    transform: skewX(-20deg) translate(0px, 0px);
+  }
+
+  25% {
+    opacity: 0.1;
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: skewX(-20deg) scale(1.5);
+  }
+
+  100% {
+    opacity: 0.3;
+    transform: skewX(-20deg) scale(0.7) translate(150px, 200px);
+  }
+}
+.text-bg{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // background:#ffd6a5;
+  position: fixed;
+  bottom: 0;
+  height: 20em;
+}
+.text-bg h1{
+  font-family: 'Abril Fatface', serif;
+  font-size: 20em;
+  line-height: 0;
+  color: rgba(170, 170, 170, 0.18);
+}
+
+
+.bg-anim {
+  background: var(--bg-anim-gradient);
+  background-size: 400% 400%;
+  animation: gradient 40s ease infinite;
+  height: 100vh;
+}
+
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}

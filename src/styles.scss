@@ -34,13 +34,10 @@ body.dark-theme {
   --bg-anim-color: #cec7c7;
   --bg-anim-bg-color: #606060;
   --bg-anim-gradient: linear-gradient(-45deg, #444444, #484848, #4c4c4c, #505050);
-  --sidebar-color: #393939;
+  --sidebar-color: #2b2b2b;
+  ;
   --logo-link: url('/assets/icons/logo-white.png');
   --border-color: 1px solid rgb(238, 238, 238);
-}
-
-#projectDrawer {
-  background-color: transparent !important;
 }
 
 button {
@@ -123,7 +120,7 @@ body {
   }
 
   .p-custom {
-    padding: 5% 20% 4% 20%;
+    padding: 2em 1em 3em 0em;
   }
 
   .link:hover {
@@ -204,6 +201,19 @@ body {
     }
   }
 
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-40px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+
   @keyframes fadeLeft {
     from {
       opacity: 0;
@@ -215,6 +225,68 @@ body {
       transform: translateX(0);
     }
   }
+
+  @keyframes showup {
+    0% {
+      opacity: 0;
+    }
+
+    20% {
+      opacity: 1;
+    }
+
+    80% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes slidein {
+    0% {
+      margin-left: -800px;
+    }
+
+    20% {
+      margin-left: -800px;
+    }
+
+    35% {
+      margin-left: 0px;
+    }
+
+    100% {
+      margin-left: 0px;
+    }
+  }
+
+  @keyframes reveal {
+    0% {
+      opacity: 0;
+      width: 0px;
+    }
+
+    20% {
+      opacity: 1;
+      width: 0px;
+    }
+
+    30% {
+      width: 355px;
+    }
+
+    80% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+      width: 355px;
+    }
+  }
+
 
   .animated-arrow {
     display: inline-block;
@@ -267,6 +339,10 @@ body {
       clip-path: polygon(0 0);
     }
 
+  }
+
+  .mdc-list-item__primary-text {
+    color: var(--text-color) !important;
   }
 }
 

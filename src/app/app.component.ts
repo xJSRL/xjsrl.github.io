@@ -14,6 +14,8 @@ export class AppComponent implements AfterViewChecked {
   @ViewChild('projectDrawer') projectDrawer!: MatDrawer; 
   private breakpointObserver = inject(BreakpointObserver);
   
+  mode = 'Dark';
+
   ngAfterViewChecked(): void {
     this.addFadeInAnimation();
   }
@@ -33,6 +35,7 @@ export class AppComponent implements AfterViewChecked {
     );
    toogleDarkTheme(){
     document.body.classList.toggle('dark-theme');
+    this.mode = this.mode === 'Light' ? 'Dark' : 'Light';
    }
 
    private addFadeInAnimation() {

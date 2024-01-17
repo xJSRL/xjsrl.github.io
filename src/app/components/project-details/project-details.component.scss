@@ -1,12 +1,10 @@
 
 .aside {
   background: var(--sidebar-color);
-  // background-color: ;
   width: 34em;
   height: 100%;
   right: 0px;
   top: 0px;
-  // z-index: 9;
   transition: all 0.3s linear 0s;
   will-change: opacity, transform;
 }
@@ -19,15 +17,9 @@ aside.fadeInLeft {
 
 .pos_relative {
   position: relative;
-  padding: 2rem 2rem 4rem;
+  padding: 0rem 2rem 4rem;
   overflow-x: auto;
   max-height: 100%;
-}
-
-.header {
-  margin-bottom: 2rem;
-  padding-bottom: 0.8rem;
-  border-bottom: 1px solid var(--border-color);
 }
 
 .project_info {
@@ -70,7 +62,7 @@ aside.fadeInLeft {
 }
 
 @media (max-width: 768px) {
-  aside {
+  .aside {
     width: 100% !important;
   }
 }

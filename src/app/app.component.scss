@@ -4,10 +4,7 @@
 
 .sidenav {
   min-width: 200px;
-}
-
-.sidenav .mat-toolbar {
-  background: inherit;
+  background-color: var(--sidebar-color);
 }
 
 .mat-toolbar.mat-primary {
@@ -17,23 +14,31 @@
 }
 .mat-toolbar{
   background-color: transparent;
+  padding: 4% 20% 4% 20%;
+}
+
+@media screen and (max-width: 956px) {
+  .mat-toolbar {
+    padding: 2em 1em 3em 1em;
+  }
+  .p-custom {
+    background: var(--sidebar-color);
+    padding: 2em 1em 3em 0em;
+  }
 }
 
 .example-spacer {
   flex: 1 1 auto;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0); 
-  }
-}
 
 .fade-in {
   animation: fadeIn 1.2s ease-out; 
 }
+
+.header {
+  background: var(--sidebar-color);
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+

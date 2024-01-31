@@ -18,13 +18,11 @@ export class BackgroundAnimationComponent implements OnInit, OnChanges {
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe(() => {
         this.routerName = this.router.url.substring(1);
-        console.log(this.routerName); 
       });
   }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['theme']) {
-      console.log('Received theme:', this.theme);
       this.updateBodyTheme();
     }
   }

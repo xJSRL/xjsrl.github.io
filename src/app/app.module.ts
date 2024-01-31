@@ -17,6 +17,10 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { ProjectDetailsComponent } from './components/project-details/project-details.component';
 import { CarouselModule } from 'primeng/carousel';
 import { GalleriaModule } from 'primeng/galleria';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +37,10 @@ import { GalleriaModule } from 'primeng/galleria';
   imports: [
     CommonModule,
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    ToastrModule.forRoot(),
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,

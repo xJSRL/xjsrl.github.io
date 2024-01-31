@@ -9,3 +9,9 @@ export interface Project{
   date: string,
   websiteLink: string
 }
+
+export interface Mailer{
+  name: string,
+  email: string,
+  message: string,
+}

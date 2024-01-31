@@ -40,7 +40,6 @@ export class ProjectDetailsComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.subscription = this._ptService.selectedProject$.subscribe((id) => {
       if (id !== null) {
-        console.log(id);
         this.getProject(id);
       }
     });
@@ -55,7 +54,6 @@ export class ProjectDetailsComponent implements OnInit, OnDestroy {
   getProject(id: number): void {
     this._ptService.getProjectById(id).subscribe((result) => {
       this.project = result;
-      console.log(this.project);
       this.cdr.detectChanges();
     });
   }

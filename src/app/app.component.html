@@ -9,7 +9,7 @@
       </button>
       <span class="example-spacer" ></span>
 
-      <button type="button" class="none-button d-flex align-items-center" mat-icon-button (click)="toogleDarkTheme()"
+      <button type="button" class="none-button d-flex align-items-center" mat-icon-button (click)="toggleDarkTheme()"
        >
        <span class="material-symbols-outlined">
         contrast
@@ -21,7 +21,7 @@
       <a mat-list-item routerLink="/about">About</a>
       <a mat-list-item routerLink="/projects">Projects</a>
       <a mat-list-item routerLink="/contact">Contact</a>
-      <!-- <a mat-list-item (click)="toogleDarkTheme()" class="d-flex">
+      <!-- <a mat-list-item (click)="toggleDarkTheme()" class="d-flex">
         Toggle {{mode}} Mode
       </a> -->
     </mat-nav-list> 
@@ -36,7 +36,7 @@
           <button class="btn-custom me-3" routerLink="/about">About</button>
           <button class="btn-custom me-3" routerLink="/projects">Projects</button>
           <button class="btn-custom me-3" routerLink="/contact">Contact</button>
-          <button (click)="toogleDarkTheme()"><span class="material-symbols-outlined d-flex align-items-center">
+          <button (click)="toggleDarkTheme()"><span class="material-symbols-outlined d-flex align-items-center">
               contrast
             </span></button>
         </div>
@@ -55,10 +55,10 @@
       style="position: fixed; top: 0; width: 100vw; z-index: -1;">
     </app-background-animation>
 
-    <div class="container d-flex justify-content-center align-items-center">
-      <div class="container-fluid">
+    <div class="container d-flex justify-content-center align-items-center" [@routeAnimations]="getRouteAnimationData()">
+      <div class="container-fluid" >
         <router-outlet></router-outlet>
-
+       
         <footer class="mt-5 mb-5">
           <app-media-links></app-media-links>
         </footer>

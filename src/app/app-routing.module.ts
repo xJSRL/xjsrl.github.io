@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { ApplicationConfig, NgModule } from '@angular/core';
+import { RouterModule, Routes, provideRouter } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
@@ -9,24 +9,33 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    title: 'Home | Jamaica Sorrel'
+    title: 'Home | Jamaica Sorrel',
+    data: { animation: '' }
   },
   {
     path: 'about',
     component: AboutComponent,
-    title: 'About Me | Jamaica Sorrel'
+    title: 'About Me | Jamaica Sorrel',
+    data: {  animation: 'about' }
   },
   {
     path: 'projects',
     component: ProjectsComponent,
-    title: 'My Projects'
+    title: 'My Projects',
+    data: { animation: 'projects' }
   },
   {
     path: 'contact',
     component: ContactComponent,
-    title: 'Contact Me'
+    title: 'Contact Me',
+    data: { animation: 'contact' }
   },
 ];
+export const appConfig: ApplicationConfig = {
+  providers: [
+    provideRouter(routes)
+  ]
+};
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

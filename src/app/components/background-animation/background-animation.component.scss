@@ -4,6 +4,9 @@ body {
   margin: 0;
 }
 
+h1{
+  text-transform: capitalize;
+}
 .lines {
   // background-color: var(--bg-anim-bg-color);
   height: 100vh;

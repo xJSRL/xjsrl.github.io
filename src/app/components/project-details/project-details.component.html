@@ -4,9 +4,9 @@
       <h3 class="mt-4">{{ project.projectName }}</h3>
       <p class="te mb-4">{{project.shortDescription}}</p>
 
-      <p-galleria [value]="images" (onItemChange)="onItemChange($event)" [numVisible]="5" [circular]="true"
+      <p-galleria [value]="project.images" [numVisible]="5" [circular]="true" [showThumbnails]="true"
         [showItemNavigators]="true" [showThumbnails]="false" [responsiveOptions]="responsiveOptions"
-        [containerStyle]="{ 'max-width': '100%', 'max-height': '100%' }">
+        [containerStyle]="{ 'max-width': '100%', 'max-height': '100%' }" *ngIf="project.images.length > 0">
         <ng-template pTemplate="item" let-item>
           <img [src]="item" style="width: 100%; display: block;" />
         </ng-template>

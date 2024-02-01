@@ -6,16 +6,16 @@
   <p>Get in touch with me directly on <span class="fw-bold">jsb.sorrel@gmail.com</span></p>
 
   <div class="mt-2">
-    <form >
+    <form [formGroup]="form">
 
       <div class="form-group">
-        <input type="text" class="form-control mb-3" placeholder="Name" name="name">
-        <input type="email" class="form-control mb-3" placeholder="Email" name="email">
-        <textarea class="form-control mb-3" rows="6" placeholder="Message"></textarea>
+        <input type="text" class="form-control mb-3" placeholder="Name" name="name" formControlName="name">
+        <input type="email" class="form-control mb-3" placeholder="Email" name="email" formControlName="email">
+        <textarea class="form-control mb-3" rows="6" placeholder="Message" formControlName="message"></textarea>
       </div>
     </form>
 
-    <button class="btn-submit">Send message</button>
+    <button class="btn-submit" (click)="sendEmail()">Send message</button>
   </div>
   
 </div>

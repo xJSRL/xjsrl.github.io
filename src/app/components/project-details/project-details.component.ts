@@ -41,6 +41,7 @@ export class ProjectDetailsComponent implements OnInit, OnDestroy {
     this.subscription = this._ptService.selectedProject$.subscribe((id) => {
       if (id !== null) {
         this.getProject(id);
+        // console.log(this.getProject(id))
       }
     });
   }
